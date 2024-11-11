@@ -5,4 +5,4 @@
 </script>
 
 <ModeWatcher />
-{@render children()}
+{@render children?.()}

@@ -81,6 +81,7 @@
 	import NavUser from '$lib/components/nav-user.svelte';
 	import TeamSwitcher from '$lib/components/team-switcher.svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import { mode } from 'mode-watcher';
 	import type { ComponentProps } from 'svelte';
 
 	let {
@@ -92,7 +93,13 @@
 
 <Sidebar.Root bind:ref {collapsible} {...restProps}>
 	<Sidebar.Header>
-		<TeamSwitcher teams={data.teams} />
+		<div class="mx-auto my-3">
+			{#if $mode === 'dark'}
+				<img src="logo_dark.svg" alt="Git Editor Selector Dark Logo" />
+			{:else}
+				<img src="logo_light.svg" alt="Git Editor Selector Light Logo" />
+			{/if}
+		</div>
 	</Sidebar.Header>
 	<Sidebar.Content>
 		<NavMain items={data.navMain} />

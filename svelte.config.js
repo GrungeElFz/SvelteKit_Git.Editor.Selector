@@ -7,6 +7,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
+	extensions: ['.svelte', '.svx'],
 	preprocess: [vitePreprocess(), mdsvex()],
 
 	kit: {
@@ -17,9 +18,7 @@ const config = {
 		alias: {
 			'@/*': './path/to/lib/*'
 		}
-	},
-
-	extensions: ['.svelte', '.svx']
+	}
 };
 
 export default config;
